@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Todo({ text, isFinished, deleteTodo, editTodo, id }) {
+function Todo({ text, isFinished, deleteTodo, editTodo }) {
     const [checkTodo, setCheckTodo] = useState(isFinished);
     const [isEditing, setIsEditing] = useState(false);
     const [todoText, setTodoText] = useState(text);
@@ -18,7 +18,7 @@ function Todo({ text, isFinished, deleteTodo, editTodo, id }) {
         <button 
             onClick={() => {
                 setIsEditing(!isEditing);
-                editTodo(id, todoText);
+                editTodo(todoText);
             }}>
             {isEditing? "Save" : "Edit"}
         </button>
